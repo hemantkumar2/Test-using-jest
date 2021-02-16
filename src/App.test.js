@@ -6,4 +6,8 @@ import App from "./App";
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
-test("Render the component", () => {});
+test("Render without error", () => {
+  const wrapper = shallow(<App />);
+  const appComponent = wrapper.find("[href='http://nirmalkar.com']");
+  expect(appComponent.length).toBe(1);
+});
