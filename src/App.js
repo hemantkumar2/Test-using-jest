@@ -5,7 +5,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div data-test="some-component" className="App">
+    <div count={count} data-test="some-component" className="App">
       <a href="http://nirmalkar.com" target="_blank" rel="noopener noreferrer">
         My Portfolio
       </a>

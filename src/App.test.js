@@ -50,3 +50,9 @@ test("Check for Increment Button", () => {
   const incrementCounter = findByTestAdder(wrapper, "increment-counter");
   expect(incrementCounter.length).toBe(1);
 });
+
+test("Counter starts at 0", () => {
+  const wrapper = setup();
+  const initialCounterState = wrapper.props().count;
+  expect(initialCounterState).toBe(0);
+});
