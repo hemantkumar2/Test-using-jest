@@ -13,11 +13,15 @@ function App() {
       <br />
       <br />
       <br />
-      <button style={style.buttonStyles} onClick={() => setCount(count + 1)}>
+      <button
+        data-test="increment-button"
+        style={style.buttonStyles}
+        onClick={() => setCount(count + 1)}
+      >
         Increment
       </button>
       <br />
-      <h3>count is {count}</h3>
+      <h3 data-test="increment-counter">count is {count}</h3>
     </div>
   );
 }

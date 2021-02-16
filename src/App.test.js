@@ -12,8 +12,20 @@ test("Render without error", () => {
   expect(appComponent.length).toBe(1);
 });
 
-test("Check for data-test attribute", () => {
+test("Check for some component attribute", () => {
   const wrapper = shallow(<App />);
   const appComponent = wrapper.find("[data-test='some-component']");
+  expect(appComponent.length).toBe(1);
+});
+
+test("Check for Increment button", () => {
+  const wrapper = shallow(<App />);
+  const appComponent = wrapper.find("[data-test='increment-button']");
+  expect(appComponent.length).toBe(1);
+});
+
+test("Check for Increment Button", () => {
+  const wrapper = shallow(<App />);
+  const appComponent = wrapper.find("[data-test='increment-counter']");
   expect(appComponent.length).toBe(1);
 });
