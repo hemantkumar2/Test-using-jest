@@ -1,29 +1,42 @@
-import { useState } from "react";
+import React, { Component } from "react";
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
+class App extends Component {
+  state = {
+    count: 0,
+  };
 
-  return (
-    <div count={count} data-test="some-component" className="App">
-      <a href="http://nirmalkar.com" target="_blank" rel="noopener noreferrer">
-        My Portfolio
-      </a>
-      <br />
-      <br />
-      <br />
-      <br />
-      <button
-        data-test="increment-button"
-        style={style.buttonStyles}
-        onClick={() => setCount(count + 1)}
-      >
-        Increment
-      </button>
-      <br />
-      <h3 data-test="increment-counter">count is {count}</h3>
-    </div>
-  );
+  render() {
+    const { count } = this.state;
+    return (
+      <div count={this.state.count} data-test="some-component" className="App">
+        <a
+          href="http://nirmalkar.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          My Portfolio
+        </a>
+        <br />
+        <br />
+        <br />
+        <br />
+        <button
+          data-test="increment-button"
+          style={style.buttonStyles}
+          onClick={() =>
+            this.setState({
+              count: count + 1,
+            })
+          }
+        >
+          Increment
+        </button>
+        <br />
+        <h3 data-test="counter-display">count is {count}</h3>
+      </div>
+    );
+  }
 }
 
 const style = {
