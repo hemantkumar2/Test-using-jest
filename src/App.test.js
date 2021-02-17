@@ -67,3 +67,12 @@ test("Clicking button increment the counter value", () => {
   const counterDisplay = findByTestAdder(wrapper, "counter-display");
   expect(counterDisplay.text()).toContain(count + 1);
 });
+
+test("Clicking button to decrement counter value", () => {
+  const count = 2;
+  const wrapper = setup(null, { count });
+  const button = findByTestAdder(wrapper, "decrement-button");
+  button.simulate("click");
+  const counterDisplay = findByTestAdder(wrapper, "counter-display");
+  expect(counterDisplay.text()).toContain(count - 1);
+});

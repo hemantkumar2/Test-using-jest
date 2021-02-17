@@ -21,17 +21,34 @@ class App extends Component {
         <br />
         <br />
         <br />
-        <button
-          data-test="increment-button"
-          style={style.buttonStyles}
-          onClick={() =>
-            this.setState({
-              count: count + 1,
-            })
-          }
-        >
-          Increment
-        </button>
+        <span>
+          <button
+            data-test="increment-button"
+            style={style.buttonStyles}
+            onClick={() =>
+              this.setState({
+                ...this.state,
+                count: count + 1,
+              })
+            }
+          >
+            Increment
+          </button>
+        </span>
+        <span>
+          <button
+            data-test="decrement-button"
+            style={{ ...style.buttonStyles, marginLeft: "1rem" }}
+            onClick={() =>
+              this.setState({
+                ...this.state,
+                count: count > 0 ? count - 1 : count,
+              })
+            }
+          >
+            Decrement
+          </button>
+        </span>
         <br />
         <h3 data-test="counter-display">count is {count}</h3>
       </div>
