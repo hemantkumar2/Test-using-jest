@@ -94,6 +94,7 @@
   "devDependencies": {
     "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
     "babel-plugin-react-remove-properties": "^0.3.0",
+    "check-prop-types": "^1.1.2",
     "enzyme": "^3.11.0",
     "jest-enzyme": "^7.1.2",
     "react-test-renderer": "^17.0.1"
@@ -154,7 +155,14 @@
     "env": {
       "production": {
         "plugins": [
-          ["react-remove-properties", {"properties": ["data-test"]}]
+          [
+            "react-remove-properties",
+            {
+              "properties": [
+                "data-test"
+              ]
+            }
+          ]
         ]
       }
     },
