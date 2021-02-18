@@ -1,6 +1,7 @@
 import React from "react";
 import Enzyme, { shallow } from "enzyme";
 import EnzymeAdapter from "@wojtekmaj/enzyme-adapter-react-17";
+import { findByTestAdder } from "../test/testUtils";
 
 import App from "./App";
 
@@ -25,9 +26,6 @@ const setup = (props = {}, state = null) => {
  * @param {string} val - value of data-test attribute for test.
  * @returns {ShallowWrapper}
  */
-const findByTestAdder = (wrapper, val) => {
-  return wrapper.find(`[data-test='${val}']`);
-};
 
 test("Render without error", () => {
   const wrapper = setup();
